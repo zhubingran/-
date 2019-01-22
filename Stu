@@ -1,0 +1,83 @@
+
+import java.io.IOException;
+import java.util.Scanner;
+
+///学生类 定义包括学生的姓名 性别 学号 课程名称 成绩
+public class Stu {
+String name;//姓名
+String sex;//性别
+String num;//学号
+String cuorse;//课程名称
+int score;//成绩
+String[][] Stu = new String[100][5];//定义一个学生数组
+int number0 = 0;
+int number = 0;//学生各项属性
+int temp0 = 0;
+
+public static void main(String[] args) {
+	
+	Menu a = new Menu();
+	newStu b = new newStu();
+	boolean temp = true;
+	newTxt c = new newTxt();
+	
+	while(temp){	
+	a.menu();
+	Scanner o = new Scanner(System.in);
+	int p = o.nextInt();
+	if(p==1) {
+		b.newstu1();
+		try {
+			b.newtxt();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	if(p==2) {
+		try {
+			b.intxt();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		b.revisestu();
+		try {
+			b.newtxt();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	if(p==3) {
+		try {
+			b.intxt();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		b.deletestu();
+		try {
+			b.newtxt();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	if(p==4){
+		try {
+			b.intxt();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		b.searchstu();
+	}
+	if(p==5) 
+		{
+		System.out.println("欢迎再次使用！");
+		temp = false;
+		}
+	}
+}
+}
