@@ -1,0 +1,93 @@
+import java.util.Scanner;
+
+public class newStu extends newTxt {
+//修改学生
+public void newstu(int num) {
+	Scanner sc = new Scanner(System.in);
+	  Stu[num][number] = sc.nextLine();
+	  Stu[num][number+1] = sc.nextLine();
+	  Stu[num][number+2] = sc.nextLine();
+	  Stu[num][number+3] = sc.nextLine();
+	  Stu[num][number+4] = sc.nextLine();
+}
+public void newstu1() {
+	  
+		 System.out.println("请输入学生的姓名、性别、学号、课程名称、成绩");
+
+	        for(int i=0;i<5;i++){
+		        Scanner input = new Scanner(System.in);
+	            Stu[number0][i]= input.nextLine();
+	            }
+	        System.out.println("存入成功");
+	        number0++;
+
+		 }
+
+
+//修改学生
+public void revisestu() {
+	
+	for(int i=0;i<=99;i++) {
+		if(Stu[i][0]==null) {
+			
+			break;
+		}
+		System.out.print(i+".");
+		for(int j=0;j<5;j++)
+		{
+			
+			System.out.print(Stu[i][j]+" ");
+		}
+		System.out.println();
+		}
+	System.out.println("请选择要修改的学生（输入编号）");
+	Scanner m = new Scanner(System.in);
+	int n = m.nextInt();
+	System.out.println("请重新输入该学生信息");
+	newstu(n);
+}
+
+
+///删除学生
+public void deletestu() {
+	System.out.println("请输入要删除的学生的编号");
+	for(int i=0;i<=99;i++) {
+		System.out.print(i+".");
+		for(int j=0;j<5;j++)
+		{
+			if(Stu[i][j]==null) {
+				
+				break;
+			}
+			System.out.print(Stu[i][j]+" ");
+		}
+		System.out.println();
+		}
+	Scanner a = new Scanner(System.in);
+	int b = a.nextInt();
+	for(int i=0;i<5;i++) {
+		Stu[b][i]=null;
+	}
+	System.out.println("删除成功 ");
+	}
+
+
+//搜索学生
+public void searchstu()
+{
+	
+	System.out.println("请输入要查询的学生的姓名");
+	Scanner a1 = new Scanner(System.in);
+	String a2 = a1.next();
+	for(int i=0;i<99;i++) {
+		if(a2.equals(Stu[i][0]))
+		{
+			for(int j=0;j<5;j++)
+				System.out.print(Stu[i][j]+" ");
+			System.out.println();
+			break;
+		}
+	}
+}
+}
+
